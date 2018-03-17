@@ -1,0 +1,27 @@
+package net.xinqushi.service.impl;
+
+import net.xinqushi.dao.UserDAO;
+import net.xinqushi.dao.impl.UserDaoImpl;
+import net.xinqushi.model.User;
+import net.xinqushi.service.UserService;
+
+public class UserServiceImpl implements UserService {
+
+	UserDAO dao;
+	
+	public UserDAO getDao() {
+		return dao;
+	}
+
+	public void setDao(UserDAO dao) {
+		this.dao = dao;
+	}
+
+	@Override
+	public void add(User user) {
+		// TODO Auto-generated method stub
+		
+		dao.save(user);;
+	}
+
+}

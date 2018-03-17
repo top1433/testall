@@ -1,0 +1,83 @@
+package test2;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+
+public class Demo {
+	public static void show() {
+		System.out.println("输入信息");
+		System.out.println("1增加一条信息");
+		System.out.println("2删除一条信息");
+		System.out.println("3跟新一条信息");
+		System.out.println("4查询所有信息");
+		System.out.println("请输入你的选择：");
+	}
+	public static Connection getConn() {
+		Connection conn=null;
+
+			String url="jdbc:mysql://localhost:3306/student?useUnicode=true&characterEncoding=GBK";
+			String user="root";
+			String pwd="123456";
+			try {
+				Class.forName("com.mysql.jdbc.Driver");
+				conn=DriverManager.getConnection(url,user,pwd);
+			} catch (ClassNotFoundException | SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}		
+		return conn;
+	}
+	
+	public static void save(Student student) throws SQLException {
+		Connection conn = getConn();		
+		String sql = "insert into studinfo(name,sex,age,telephone) values(?,?,?,?);";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, student.getName());
+		ps.setString(2, student.getAge());
+		ps.setString(3, student.getSex());
+		ps.setString(4, student.getTelephone());
+		ps.executeUpdate();
+		ps.close();
+	}
+
+	
+	
+	public static void main(String[] args) throws SQLException {
+		// TODO Auto-generated method stub
+		show();
+		Student s = new Student();
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+		int key = scanner.nextInt();
+
+/*
+ * 
+ */
+		while(key!=5) {
+			switch (key) {
+			case 1:
+				
+				System.out.println("姓名");
+				s.setName(scanner.nextLine());
+				System.out.println("年龄");
+				s.setAge(scanner.nextLine());
+				System.out.println("性别");
+				s.setSex(scanner.nextLine());
+				System.out.println("电话号码");
+				s.setTelephone(scanner.next());
+				save(s);
+				break;
+			default:
+				break;
+			}
+			/* switch end*/
+		}
+		
+	}
+	
+
+}

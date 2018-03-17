@@ -1,0 +1,13 @@
+127.0.0.1 - - [11/Mar/2018:02:11:21 +0800] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [11/Mar/2018:02:11:23 +0800] "GET /springdemo/register.jsp HTTP/1.1" 200 529
+127.0.0.1 - - [11/Mar/2018:02:11:28 +0800] "POST /springdemo/add.action HTTP/1.1" 500 7279
+127.0.0.1 - - [11/Mar/2018:02:15:21 +0800] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [11/Mar/2018:02:15:22 +0800] "GET /springdemo/main.jsp HTTP/1.1" 200 394
+127.0.0.1 - - [11/Mar/2018:02:15:23 +0800] "GET /springdemo/register.jsp HTTP/1.1" 200 536
+127.0.0.1 - - [11/Mar/2018:02:15:25 +0800] "POST /springdemo/add.action HTTP/1.1" 500 7534
+127.0.0.1 - - [11/Mar/2018:02:19:56 +0800] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [11/Mar/2018:02:19:58 +0800] "GET /springdemo/register.jsp HTTP/1.1" 200 529
+127.0.0.1 - - [11/Mar/2018:02:20:01 +0800] "POST /springdemo/add HTTP/1.1" 500 7534
+127.0.0.1 - - [11/Mar/2018:02:21:03 +0800] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [11/Mar/2018:02:21:03 +0800] "GET /springdemo/register.jsp HTTP/1.1" 200 529
+127.0.0.1 - - [11/Mar/2018:02:21:08 +0800] "POST /springdemo/add HTTP/1.1" 500 7534

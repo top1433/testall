@@ -1,0 +1,9 @@
+package mybatis;
+
+public class User {
+	public int id;
+	public String userName;
+	public String userPwd;
+	
+	
+}

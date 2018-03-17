@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Fri Mar 16 23:22:45 CST 2018
+org.eclipse.jst.jee.server\:/binary\:D\:\\ssh\\spring5.0\\spring-web-5.0.4.RELEASE.jar=WEB-INF/lib/spring-web-5.0.4.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:E\:\\SSH\\spring\\spring-web-4.1.6.RELEASE.jar=WEB-INF/lib/spring-web-4.1.6.RELEASE.jar

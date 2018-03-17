@@ -1,0 +1,36 @@
+package net.xinqushi.service.impl;
+
+import javax.annotation.Resource;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import net.xinqushi.dao.UserDAO;
+import net.xinqushi.model.User;
+import net.xinqushi.service.UserService;
+@Component(value="service")
+//@Service(value="service")
+@Scope(value="singleton")
+public class UserServiceImpl implements UserService {
+
+	@Resource(name="sqlDAO")
+	UserDAO dao;
+	public UserDAO getDao() {
+		return dao;
+	}
+	
+	public void setDao(UserDAO dao) {
+		this.dao = dao;
+	}
+	@Override
+	public void add(User user) {
+		// TODO Auto-generated method stub
+		dao.save(user);
+	}
+	@Override//用户是否存在
+	public Boolean checkExists(User user) {
+		// TODO Auto-generated method stub
+		return dao.checkExists(user);
+	}
+}

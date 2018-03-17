@@ -1,0 +1,8 @@
+package mybatis;
+
+import java.util.List;
+
+public interface UserMapper {
+	public List<User> selectALL();
+	public User insertUser(User user);
+}

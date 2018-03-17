@@ -1,0 +1,24 @@
+package net.xinqushi.test;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.junit.jupiter.api.Test;
+
+import mybatis.User;
+import mybatis.UserMaper;
+import net.xinqushi.utils.MybatisUtils;
+
+class Test4 {
+
+	@Test
+	void test() throws IOException {
+		SqlSession sqlSession=MybatisUtils.openSession();
+		UserMaper mapper= sqlSession.getMapper(UserMaper.class);
+		List<User> list=mapper.selectALL();
+		System.out.println(list);
+
+	}
+
+}

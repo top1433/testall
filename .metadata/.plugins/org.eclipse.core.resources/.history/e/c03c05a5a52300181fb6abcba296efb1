@@ -1,0 +1,7 @@
+package net.xinqushi.config;
+
+public class SpringConfig {
+	public UserDAO getUserDAO(){
+		return new UserDAO();
+	}
+}

@@ -1,0 +1,14 @@
+package springbootdemo;
+
+import org.omg.CORBA.PUBLIC_MEMBER;
+
+public class HelloApplication {
+
+	public String hello() {
+		return "hello world!";
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	}
+
+}

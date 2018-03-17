@@ -1,0 +1,25 @@
+package net.xinqushi.test;
+
+public class Base {
+	
+	void Iam(Base b) {
+		System.out.println("Base:Overload");
+		}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class Child extends Base{
+	void Iam(Base b) {
+		System.out.println("Base:Override");
+	}
+	
+	void Iam(Child c) {
+		System.out.println("Child:Override");
+	}
+}

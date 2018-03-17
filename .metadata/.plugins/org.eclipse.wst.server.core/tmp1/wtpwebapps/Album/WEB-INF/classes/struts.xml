@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+
+	<!-- Some or all of these can be flipped to true for debugging -->
+	<constant name="struts.action.extension" value="action,," />
+	<constant name="struts.i18n.reload" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false"></constant>
+	
+	
+
+	<include file="user.xml"></include>
+	<include file="album.xml"></include>
+
+
+	<package name="all" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="main">/main.jsp</result>
+		</global-results>
+	</package>
+	
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

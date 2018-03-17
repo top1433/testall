@@ -1,0 +1,34 @@
+package net.xinqushi.test;
+
+import java.io.IOException;
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+
+import mybatis.User;
+import net.xinqushi.utils.MybatisUtils;
+
+public class Test3 {
+
+	@Test
+	public void testselect() throws IOException {
+		SqlSession session = MybatisUtils.openSession();
+		String string = "mybatis.userMapper.selectUser";
+		User user=session.selectOne(string);
+		System.out.println(user);
+	}
+	
+	public void testinsert() throws IOException {
+		SqlSession session = MybatisUtils.openSession();
+		String string = "mybatis.userMapper.selectUser";
+		User user = new User();
+		user.setUsername("zhangsan");
+		user.setPassword("123465798");
+		
+		int count=session.insert(string, user);
+		session.close();
+		//System.out.println(count);
+	}
+	
+	
+
+}

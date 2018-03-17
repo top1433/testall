@@ -1,0 +1,6 @@
+1521205242176	Rename type 'UserService'
+1521206327858	Rename resource 'hibernate.cfg.xml'
+1521206339412	Rename resource 'ddddddhibernate.cfg.xml'
+1521209313942	Delete element
+1521209337084	Move 'applicationContext.xml' to 'WebContent'
+1521209375220	Move 'applicationContext.xml' to 'WEB-INF'

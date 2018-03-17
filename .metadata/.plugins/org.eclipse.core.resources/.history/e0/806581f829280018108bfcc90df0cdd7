@@ -1,0 +1,5 @@
+package net.xinqushi.model;
+
+public interface ContactMapper {
+	public void insertContact(Contact contact);
+}

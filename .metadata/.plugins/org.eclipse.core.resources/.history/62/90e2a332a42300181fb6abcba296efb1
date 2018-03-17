@@ -1,0 +1,5 @@
+package net.xinqushi.config;
+
+public class User {
+
+}

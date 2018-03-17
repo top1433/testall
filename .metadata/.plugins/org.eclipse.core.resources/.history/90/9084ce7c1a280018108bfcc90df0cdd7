@@ -1,0 +1,10 @@
+package net.xinqushi.test;
+import org.junit.Test;
+class Test {
+
+	@org.junit.jupiter.api.Test
+	void testInsert() {
+		
+	}
+
+}

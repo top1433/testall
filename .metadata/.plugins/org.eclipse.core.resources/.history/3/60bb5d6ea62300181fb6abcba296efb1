@@ -1,0 +1,11 @@
+package net.xinqushi.config;
+
+import java.util.List;
+
+public class UserService {
+	private UserDAO userDAO;
+	
+	public List<User> queryUserList(){
+		
+	}
+}

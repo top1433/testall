@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+	
+	<struts>
+<!-- 		<include file="user.xml"></include> -->
+		<package name="all" namespace="/" extends="struts-default">
+
+<!-- 			<global-allowed-methods>add</global-allowed-methods> -->
+			<action name="add" class="net.xinqushi.model.User">
+				<result name="main">/main.jsp</result>
+			
+			</action>
+
+		</package>
+	
+	
+	</struts>

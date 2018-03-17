@@ -1,0 +1,19 @@
+package springbootdemo;
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Controller;
+
+@Controller
+@SpringBootApplication
+@Configuration
+public class HelloApplication {
+
+	public String hello() {
+		return "hello world!";
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	}
+
+}

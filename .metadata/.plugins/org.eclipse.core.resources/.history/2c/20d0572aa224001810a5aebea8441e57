@@ -1,0 +1,9 @@
+package net.xinqushi.service;
+
+import net.xinqushi.dao.UserDAO;
+import net.xinqushi.model.User;
+
+public interface UserService {
+	
+
+}

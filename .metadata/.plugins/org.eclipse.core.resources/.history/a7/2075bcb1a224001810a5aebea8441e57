@@ -1,0 +1,14 @@
+package net.xinqushi.service.impl;
+
+import net.xinqushi.model.User;
+import net.xinqushi.service.UserService;
+
+public class UserServiceImpl implements UserService {
+
+	@Override
+	public void add(User user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

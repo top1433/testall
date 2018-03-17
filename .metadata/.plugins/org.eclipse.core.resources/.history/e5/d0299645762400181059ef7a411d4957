@@ -1,0 +1,10 @@
+package net.xinqushi.model;
+
+import org.hibernate.SessionFactory;
+
+public class HibernateUtils {
+	private static SessionFactory sessionFactory;
+	private static SessionFactory buildSessionFactory() {
+		
+	}
+}

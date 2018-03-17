@@ -1,0 +1,5 @@
+package net.xinqushi.dao.impl;
+
+public class UserDaoImpl {
+
+}

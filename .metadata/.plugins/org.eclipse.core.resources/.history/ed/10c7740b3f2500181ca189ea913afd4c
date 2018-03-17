@@ -1,0 +1,12 @@
+package net.xinqushi.test;
+
+public class Test {
+
+	@org.junit.Test
+	public void test() {
+		IUser user = new User();
+		//user.add();
+		
+	}
+
+}

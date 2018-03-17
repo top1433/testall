@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+
+table.gridtable {
+		font-family: verdana,arial,sans-serif;
+		font-size:11px;
+		color:rgb(128, 102, 160);
+		border-width: 1px;
+		border-color: rgb(128, 102, 160);
+		border-collapse: collapse;
+	}
+	table.gridtable th {
+		background-color:#c3dde0;
+		border-width: 1px;
+		padding: 8px;
+		border-style: solid;
+		border-color: rgb(128, 102, 160);
+	}
+	table.gridtable tr {
+		background-color:rgba(231,239,238,1.00);
+	}
+	table.gridtable td {
+		border-width: 1px;
+		padding: 8px;
+		border-style: solid;
+		border-color: rgb(128, 102, 160);
+	}
+
+
+
+

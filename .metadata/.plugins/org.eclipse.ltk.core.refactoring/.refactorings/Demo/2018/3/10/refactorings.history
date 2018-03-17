@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 4 elements from project &apos;Demo&apos;&#x0D;&#x0A;- Original project: &apos;Demo&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     net.xinqushi.Ccc.java&#x0D;&#x0A;     net.xinqushi.Demo.java&#x0D;&#x0A;     net.xinqushi.Test.java&#x0D;&#x0A;     net.xinqushi.Test1.java" description="Delete elements" element1="/src&lt;net.xinqushi{Ccc.java" element2="/src&lt;net.xinqushi{Demo.java" element3="/src&lt;net.xinqushi{Test1.java" element4="/src&lt;net.xinqushi{Test.java" elements="4" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1520414439490" subPackages="false" version="1.0"/>
+</session>

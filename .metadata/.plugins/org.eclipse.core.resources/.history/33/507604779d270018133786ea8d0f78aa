@@ -1,0 +1,15 @@
+package net.xinqushi.test;
+
+import org.apache.ibatis.session.SqlSession;
+import org.junit.jupiter.api.Test;
+
+import net.xinqushi.utils.MybatisUtils;
+
+class Test4 {
+
+	@Test
+	void test() {
+		SqlSession sqlSession=MybatisUtils.openSession();
+	}
+
+}

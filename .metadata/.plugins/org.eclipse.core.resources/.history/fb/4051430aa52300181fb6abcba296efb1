@@ -1,0 +1,12 @@
+package net.xinqushi.config;
+
+import java.util.*;
+
+public class UserDAO {
+	public List<User> queryUserList() {
+		List<User> result = new ArrayList<User >();
+		for(int i = 0 ;i<10;i++) {
+			
+		}
+	}
+}

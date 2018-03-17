@@ -1,0 +1,34 @@
+package net.xinqushi.action;
+
+import javax.annotation.Resource;
+
+import net.xinqushi.model.User;
+import net.xinqushi.service.UserService;
+
+
+public class UserAction {
+	User user;
+	
+	@Resource(name="service")
+	UserService service;
+	
+	public UserService getService() {
+		return service;
+	}
+	public void setService(UserService service) {
+		this.service = service;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public String add() {
+	//	System.out.println(user.name+user.pwd);
+		
+	    service.add(user);
+		return "main";
+	}
+}

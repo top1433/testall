@@ -1,0 +1,9 @@
+package net.xinqushi.dao;
+
+import net.xinqushi.model.User;
+
+public class UserDAO {
+	public void save(User user) {
+		
+	}
+}

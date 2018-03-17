@@ -1,0 +1,10 @@
+package net.xinqushi.action;
+
+import net.xinqushi.dao.UserDAO;
+
+public class UserAction {
+	public String add() {
+		UserDAO dao = new UserDAO();
+		dao.save(user);;
+	}
+}

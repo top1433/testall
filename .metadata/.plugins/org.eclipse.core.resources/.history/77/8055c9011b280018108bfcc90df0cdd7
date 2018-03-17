@@ -1,0 +1,24 @@
+package net.xinqushi.test;
+
+import java.io.IOException;
+
+import org.apache.ibatis.session.SqlSession;
+
+import net.xinqu.common.MybatisUtils;
+import net.xinqu.model.Student;
+import net.xinqu.model.StudentMapper;
+
+class Test {
+
+	@org.junit.jupiter.api.Test
+	void testInsert() throws IOException {
+		SqlSession sqlSession = MybatisUtils.openSession();
+		StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
+		Student student = new Student();
+		student.setName("刘德华");
+		student.setSex("男");
+		student.setPhone("123456789");
+		studentMapper.insertStudent(student);
+	}
+
+}

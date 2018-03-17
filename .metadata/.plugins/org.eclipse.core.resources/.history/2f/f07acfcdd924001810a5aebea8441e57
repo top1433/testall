@@ -1,0 +1,49 @@
+package javastudy;
+
+public class Student {
+	int id;
+	String name;
+	String sex;
+	int age;
+	String telephone;
+	public Student(int id, String name, String sex, int age, String telephone) {
+		super();
+		this.stuid = id;
+		this.name = name;
+		this.sex = sex;
+		this.age = age;
+		this.telephone = telephone;
+		
+	}
+	public int getId() {
+		return stuid;
+	}
+	public void setId(int id) {
+		this.stuid = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getTelephone() {
+		return telephone;
+	}
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+	
+}

@@ -1,0 +1,11 @@
+package net.xinqushi.test;
+
+public class User implements IUser {
+
+	@Override
+	public void add() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

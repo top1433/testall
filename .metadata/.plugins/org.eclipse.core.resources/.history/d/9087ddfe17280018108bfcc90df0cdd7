@@ -1,0 +1,9 @@
+package net.xinqu.model;
+
+public class Contact {
+	private int id;
+	private String name;
+	private String sex;
+	private String relation;
+	private String phone;
+}

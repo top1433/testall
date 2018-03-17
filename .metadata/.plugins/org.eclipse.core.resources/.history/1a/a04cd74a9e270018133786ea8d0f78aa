@@ -1,0 +1,7 @@
+package mybatis;
+
+import java.util.List;
+
+public interface UserMaper {
+	public List<User> selectALL();
+}

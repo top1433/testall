@@ -1,0 +1,9 @@
+package net.xinqushi.model;
+
+import org.hibernate.Session;
+
+public class HibernateUtils {
+	public static Session openSession() {
+		
+	}
+}

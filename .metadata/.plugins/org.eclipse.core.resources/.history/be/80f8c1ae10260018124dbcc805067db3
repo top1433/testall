@@ -1,0 +1,152 @@
+package javastudy;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+import com.mysql.jdbc.ResultSetMetaData;
+
+public class Test {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
+		showMenu();
+		Scanner scan = new Scanner(System.in);
+		int choice = scan.nextInt();
+		while (choice != 5) {
+			switch (choice) {
+			case 1:
+				Scanner scanner = new Scanner(System.in);
+				System.out.println("(1).请输入学生的姓名:");
+				String name = scanner.nextLine();
+				System.out.println("(2).请输入学生的性别:");
+				String sex = scanner.nextLine();
+				System.out.println("(3).请输入学生的年龄:");
+				int age = scanner.nextInt();
+				scanner.nextLine();
+				// 用来取出缓冲区中留下的空白符
+				System.out.println("(4).请输入学生的电话号");
+				String telephone = scanner.nextLine();
+				Student s = new Student(name, sex, age, telephone);
+				save(s);
+				break;
+			case 2:
+				Scanner scanner1 = new Scanner(System.in);
+				System.out.println("请输入要删除的学生名字:");
+				String name1 = scanner1.nextLine();
+				delete(name1);
+				break;
+			case 3:
+				System.out.println("你查阅的学生信息为：");
+				show();
+				break;
+			case 4:
+				String fileName="D:\\java\\data.txt";
+				export(fileName);
+				break;
+			case 5:
+			default:
+				System.out.println("退出系统：");
+			}
+			showMenu();
+			choice = scan.nextInt();
+		}
+		System.out.println("再见：欢迎再次使用该学生信息管理系统！");
+	}
+
+	public static void showMenu() {
+		System.out.println("********************************************");
+		System.out.println("* 欢迎使用新趋势学生信息管理系统1.0         *");
+		System.out.println("*                                           *");
+		System.out.println("* 请选择你要执行的命令                      *");
+		System.out.println("*                                           *");
+		System.out.println("* 1.输入学生信息 2.删除学生信息             *");
+		System.out.println("* 3.查阅学生信息 4.导出学生信息             *");
+		System.out.println("* 5.退出系统                                *");
+		System.out.println("********************************************");
+		System.out.println("请输入你的选择:");
+	}
+
+	// jdbc方法的实现
+	public static Connection getConn() throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/student?useUnicode=true&characterEncoding=UTF-8", "root", "123456789");
+		return conn;
+
+	}
+
+	// 保存信息
+	public static void save(Student student) throws ClassNotFoundException, SQLException {
+		Connection conn = getConn();
+		String sql = "insert into student(name,sex,age,telephone) values(?,?,?,?)";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, student.name);
+		ps.setString(2, student.sex);
+		ps.setInt(3, student.age);
+		ps.setString(4, student.telephone);
+		ps.executeUpdate();
+		ps.close();
+		conn.close();
+	}
+
+	// 删除信息
+	public static void delete(String name) throws ClassNotFoundException, SQLException {
+		Connection conn = getConn();
+		String sql = "delete from student where name = ? ";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		int count = ps.executeUpdate();
+		if (count > 0) {
+			System.out.println("学生" + name + "信息已删除");
+		} else {
+			System.out.println("该学生不存在：");
+		}
+	}
+
+	// 显示信息
+	public static void show() throws ClassNotFoundException, SQLException {
+		Connection conn = getConn();
+		String sql = "select * from student";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+
+		System.out.println("学生信息如下：" + "\t");
+
+		while (rs.next()) {
+			for (int j = 1; j <= 5; j++) {
+				System.out.println(rs.getString(j) + "\t");
+			}
+			System.out.println();
+
+		}
+		rs.close();
+		conn.close();
+		ps.close();
+	}
+
+	// 导出信息
+	public static void export(String fileName) throws ClassNotFoundException, SQLException, IOException {
+		Connection conn = getConn();
+		String sql = "select * from student";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+		FileWriter fw = new FileWriter(fileName);
+		BufferedWriter bw = new BufferedWriter(fw);
+		while (rs.next()) {
+			for (int i = 1; i <= 5; i++) {
+				bw.write(i);
+			}
+		}
+		bw.flush();
+		fw.close();
+		bw.close();
+		rs.close();
+		ps.close();
+		conn.close();
+	}
+}

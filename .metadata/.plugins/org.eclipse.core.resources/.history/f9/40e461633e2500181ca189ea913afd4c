@@ -1,0 +1,22 @@
+package net.xinqushi.test;
+
+public class User implements IUser {
+
+
+	@Override
+	public void add() {
+		public void before() {
+			System.out.println("before...............");
+		}
+		// TODO Auto-generated method stub
+		System.out.println("add is running.............");
+		
+		public void end() {
+			System.out.println("end...............");
+		}
+	}
+	
+	
+
+
+}

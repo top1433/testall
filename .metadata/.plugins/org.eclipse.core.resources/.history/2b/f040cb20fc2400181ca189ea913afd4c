@@ -1,0 +1,68 @@
+package test2;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+
+public class Demo {
+	public static void show() {
+		System.out.println("学生信息管理：");
+		System.out.println("输入1新增一个学生");
+		System.out.println("输入2删除一个学生");
+		System.out.println("输入3修改学生信息");
+		System.out.println("输入4到处学生信息");
+	}
+	public static Connection getConn() {
+		Connection conn=null;
+
+			String driver = "com.mysql.jdbc.Drive";
+			String url="jdbc:mysql://localhost:3306/student";
+			String user="root";
+			String pwd="123465";
+			try {
+				Class.forName(driver);
+				conn=DriverManager.getConnection(url,user,pwd);
+			} catch (ClassNotFoundException | SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}		
+		return conn;
+	}
+	
+	public static void save(Student student) throws SQLException {
+		Connection conn = getConn();		
+		String sql = "insert into studinfo(name,sex,age,telephone) values(?,?,?,?);";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, student.getName());
+		ps.setString(2, student.getAge());
+		ps.setString(3, student.getSex());
+		ps.setString(4, student.getTelephone());
+		ps.executeUpdate();
+		ps.close();
+	}
+
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		show();
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+		int key = Integer.parseInt(new Scanner(System.in).nextLine());
+		switch (key) {
+		case 1:
+			System.out.println("输入姓名");
+			
+			
+			break;
+
+		default:
+			break;
+		}
+	}
+	
+
+}

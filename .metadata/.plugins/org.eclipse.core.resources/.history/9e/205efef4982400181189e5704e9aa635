@@ -1,0 +1,10 @@
+package net.xinqushi.service;
+
+import net.xinqushi.dao.UserDAO;
+
+public class UserService {
+	public void addUser(UserDAO dao) {
+		UserDAO dao=new UserDAO();
+		dao.save(user);
+	}
+}

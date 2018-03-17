@@ -1,0 +1,5 @@
+package net.xinqushi.model;
+
+public class User {
+
+}

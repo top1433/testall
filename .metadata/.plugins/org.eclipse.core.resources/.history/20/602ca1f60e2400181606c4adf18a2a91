@@ -1,0 +1,32 @@
+package net.xinqushi.test;
+
+public class Base {
+	
+	void Iam(Base b) {
+		System.out.println("FBase:Overload");
+		}
+	
+	void Iam(Child c) {
+		System.out.println("FChild:Override");
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Base[] test = new Base[] {new Base(),new Child()};
+		for(int i=0;i<test.length;i++) {
+			test[i].Iam(new Child());
+		}
+	}
+
+}
+
+class Child extends Base{
+	void Iam(Base b) {
+		System.out.println("CBase:Override");
+	}
+	
+	void Iam(Child c) {
+		System.out.println("CChild:Override");
+	}
+}

@@ -1,0 +1,9 @@
+package net.xinqushi.test;
+
+class Test {
+
+	@Test
+	void test() {
+	}
+
+}

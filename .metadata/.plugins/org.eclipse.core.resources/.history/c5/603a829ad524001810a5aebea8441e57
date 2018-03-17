@@ -1,0 +1,106 @@
+package javastudy;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class Test {
+
+	
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		showMenu();
+		Scanner scan=new Scanner(System.in);
+		int choice=scan.nextInt();
+		while(choice!=5){
+		 switch(choice){
+		    case 1:
+		    	Scanner scanner=new Scanner(System.in);
+				System.out.println("请输入学生的学生号:");
+				int id=scanner.nextInt();
+				System.out.println("请输入学生的姓名:");
+				String name=scanner.nextLine();
+				System.out.println("请输入学生的性别:");
+				String sex=scanner.nextLine();
+				System.out.println("请输入学生的年龄:");
+				int age=scanner.nextLine();
+				System.out.println("请输入学生的电话号");
+				String telephone=scanner.nextLine();
+		    	Student s=new Student(id,name,sex,age,telephone);
+		    	save(s);
+		        break;
+		    case 2:
+		    	
+		        break;
+		    case 3:
+		        break;
+		    case 4:
+		        break;
+		    case 5:
+		   
+		   }
+		  
+		}
+	}
+	public static void showMenu(){
+		System.out.println("********************************************");
+		System.out.println("* 欢迎使用新趋势学生信息管理系统1.0         *");
+		System.out.println("*                                          *");
+		System.out.println("* 请选择你要执行的命令                      *");
+		System.out.println("*                                          *");
+		System.out.println("* 1.输入学生信息 2.删除学生信息             *");
+		System.out.println("* 3.查阅学生信息 4.导出学生信息             *");
+		System.out.println("* 5.退出系统                                *");
+		System.out.println("********************************************");
+		System.out.println("请输入你的选择:");
+	}
+	public static Connection getConn() throws ClassNotFoundException, SQLException{
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn=DriverManager.getConnection
+				("jdbc:mysql://192.168.2.240/student","root","123456");
+		return conn;
+			
+	}
+	//保存信息
+	public static void save(Student student) throws ClassNotFoundException, SQLException{
+		Connection conn=getConn();
+		String sql="insert into studinfo(name,sex,age,telephone) values(?,?,?,?)";
+		PreparedStatement ps=conn.prepareStatement(sql);
+		ps.setInt(1, student.id);
+		ps.setString(2, student.name);
+		ps.setString(3, student.sex);
+		ps.setInt(4, student.age);
+		ps.setString(5, student.telephone);
+		ps.executeUpdate(sql);
+	
+	}
+	//删除信息
+    public static void delete(int id) throws ClassNotFoundException, SQLException{
+		Connection conn=getConn();
+		String sql="delete from student where id='2'";
+		
+	}
+    //显示信息
+    public static void show() throws ClassNotFoundException, SQLException{
+    	Connection conn=getConn();
+    	String sql="select * from student";
+    	PreparedStatement ps=conn.prepareStatement(sql);
+    	ResultSet rs=ps.executeQuery();
+    	while(rs.next()){
+			for(int i=1;i<=5;i++){
+				System.out.print(rs.getString(i)+"\t");
+			}
+			System.out.println();
+		}
+    }
+    //导出信息
+    public static void export(String fileName){
+    	
+    }
+}
+	
+	
+	

@@ -1,0 +1,23 @@
+package net.xinqushi.action;
+
+import net.xinqushi.dao.UserDAO;
+import net.xinqushi.model.User;
+import net.xinqushi.service.UserService;
+
+public class UserAction {
+	User user;
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public String add() {
+	//	System.out.println(user.name+user.pwd);
+		
+	    UserService service = new UserService();
+	    service.addUser(user);
+		return "main";
+	}
+}

@@ -1,0 +1,21 @@
+package net.xinqushi.test;
+
+import javax.swing.text.AsyncBoxView.ChildLocator;
+
+public class Base {
+	
+	void Iam(Base b) {
+		System.out.println("Base:Overload");
+		}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class Child exte Base{
+	
+}

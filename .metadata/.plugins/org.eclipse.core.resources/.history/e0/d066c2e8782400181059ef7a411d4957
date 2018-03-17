@@ -1,0 +1,7 @@
+package net.xinqushi.action;
+
+public class UserAction {
+	public String add() {
+		
+	}
+}

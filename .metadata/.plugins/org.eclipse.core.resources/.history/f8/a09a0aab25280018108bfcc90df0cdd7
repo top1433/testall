@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.xinqushi.model.StudentMapper">
+<insert id="insertStudent" parameterType="net.xinqushi.model.Student" useGeneratedKeys="true" keyProperty="id">
+		insert into student
+		(
+			name,
+			sex,
+			pwd,
+			phone,
+			grade,
+			photo
+		)
+		values
+		(
+			#{name},
+			#{sex},
+			#{pwd},
+			#{phone},
+			#{grade},
+			#{photo}
+		)
+	</insert>
+	
+	<select id="selectStudentById" parameterType="int" resultMap="student">
+		select 
+			s.neme sname,
+			s.sex ssex,
+			s.pwd spwd,
+			s.phone sphone,
+			s.grade sgrade,
+			s.photo sphoto
+			c.name, cname,
+			c.sex csex,
+			c.relation crelation,
+			c.phone cphone
+			from student s,contact c
+			where
+			
+			 s.id = #{id} and s.id = c.sid
+			
+	</select>
+	<resultMap type="net.xinqushi.model.Student" id="student">
+	</resultMap>
+</mapper>
